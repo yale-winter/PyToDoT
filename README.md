@@ -18,5 +18,3 @@ And name the document 'ToDos.csv' and place in the same folder<br/><br/>
 - Import the package to see your to-do list and details.
 - Use command pytodot.commands.find_to_do_progress() to list out to-dos
 - Use command pytodot.commands.to_do(x) to see full details of to-do x
-
-![PyToDoT](https://user-images.githubusercontent.com/5803874/175763591-e8261c2d-d28c-4527-a3d6-aa3672ad4171.jpg)
