@@ -1,5 +1,9 @@
+![pytodot2](https://user-images.githubusercontent.com/5803874/180697407-44c2fe00-685f-42a9-a345-3c2ac2207896.JPG)
+
+^ custom AI created promotional artwork for pytodot
+
 - - - - - - - - - - - - - - - - - - - - - - - - -
-**PyToDoT: Python To-Do Tracker**
+**pytodot: Python To-Do Tracker**
 - - - - - - - - - - - - - - - - - - - - - - - - -
 Create a google sheet online or use with .csv offline with the following schema:
 
