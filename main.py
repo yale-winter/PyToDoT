@@ -8,7 +8,7 @@ yalewinter.com
 
 import pandas as pd
 from datetime import date, timedelta
-from . commands import find_next_to_dos,find_to_do_progress,find_recent_progress
+from . commands import find_next_to_dos,find_to_do_progress,find_recent_progress, set_ldf
 import os
 
 def fix_dates_in_col(df, col_index, col_names):
@@ -21,10 +21,10 @@ def fix_dates_in_col(df, col_index, col_names):
 
     '''
     try:
-        ldf = df.tolist()
-        for i in range(len(ldf)):
-            ldf[i][col_index] = pd.to_datetime(df.iloc[i][col_index])
-        df = pd.DataFrame(ldf, columns=col_names)  
+        ldf2 = df.tolist()
+        for i in range(1, len(ldf2)):
+            ldf2[i][col_index] = pd.to_datetime(df.iloc[i][col_index])
+        df = pd.DataFrame(ldf2, columns=col_names)  
     except:
         print('cant format dates')
     return df
@@ -84,14 +84,15 @@ def start():
     gsheet_mid_link = '___link_url_here____'
     col_names = ['To-Dos', 'Date Assigned', 'Date Complete', 'Priority']
     df = import_data_table('ToDos.csv', import_online, gsheet_mid_link, 1000, col_names)
-    try:
-        df = fix_dates_in_col(df, 1, col_names)
-        df = fix_dates_in_col(df, 2, col_names)
-        find_next_to_dos(df)
-        prog = find_to_do_progress(df)
-        find_recent_progress(df, prog)
-    except:
-        print('loading data error')
+    #try:
+    df = fix_dates_in_col(df, 1, col_names)
+    df = fix_dates_in_col(df, 2, col_names)
+    find_next_to_dos(df)
+    prog = find_to_do_progress(df)
+    find_recent_progress(df, prog)
+    #except:
+    #    print('loading data error')
     return df
     
 df = start()
+set_ldf(df)
